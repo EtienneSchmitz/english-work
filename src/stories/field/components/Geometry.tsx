@@ -1,5 +1,5 @@
 import React from "react";
-import { BufferGeometry, CircleGeometry, Shape, Vector3 } from "three";
+import { BufferGeometry, Shape, Vector3 } from "three";
 
 export interface GeometryProps {
   field: {
@@ -7,6 +7,7 @@ export interface GeometryProps {
   };
   height: number;
   width: number;
+  scale : number;
 }
 
 export const GeometryField: React.FC<GeometryProps> = (

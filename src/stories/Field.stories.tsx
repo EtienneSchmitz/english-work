@@ -29,13 +29,20 @@ FieldWithoutRobot.args = {
   container: canvasSize,
 };
 
-export const FieldWithRobot = Template.bind({});
+export const FieldWithRobotAndBall = Template.bind({});
 
-FieldWithRobot.args = {
-  field: { size : { width : 6, length : 9}},
+FieldWithRobotAndBall.args = {
+  field: { size: { width: 6, length: 9 } },
   robots: {
-    blue : [],
-    yellow: []
+    blue: [],
+    yellow: [],
   },
-  container: canvasSize
+  ball: {
+    position: {
+      x: -1,
+      y: 1,
+    },
+    radius: 0.0215,
+  },
+  container: canvasSize,
 };

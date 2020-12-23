@@ -1,5 +1,6 @@
 import React from "react";
 import { Canvas } from "react-three-fiber";
+import { Ball } from "./components/Ball";
 import { GeometryField } from "./components/Geometry";
 
 export interface Robots {
@@ -23,6 +24,13 @@ export interface FieldViewProps {
     blue: Array<Robots>;
     yellow: Array<Robots>;
   };
+  ball: {
+    position: {
+      x: number;
+      y: number;
+    };
+    radius: number;
+  };
   container: {
     width: number;
     height: number;
@@ -38,6 +46,7 @@ export class FieldView extends React.Component<FieldViewProps, FieldViewState> {
   render() {
     const height = this.props.container.height - 10;
     const width = this.props.container.width;
+    const scale = 100;
     return (
       <Canvas
         orthographic
@@ -51,7 +60,13 @@ export class FieldView extends React.Component<FieldViewProps, FieldViewState> {
           position: [0, 0, 1],
         }}
       >
-        <GeometryField field={this.props.field} width={width} height={height} />
+        <GeometryField
+          field={this.props.field}
+          width={width}
+          height={height}
+          scale={scale}
+        />
+        {this.props.ball ? <Ball ball={this.props.ball} scale={scale} /> : null}
       </Canvas>
     );
   }
