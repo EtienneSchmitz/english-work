@@ -31,11 +31,112 @@ FieldWithoutRobot.args = {
 
 export const FieldWithRobotAndBall = Template.bind({});
 
+const yellow = [
+  {
+    id: 0,
+    position: {
+      x: 1.5,
+      y: 1.12,
+      theta: 3.14,
+    },
+  },
+  {
+    id: 1,
+    position: {
+      x: 1.5,
+      y: 0,
+      theta: 3.14,
+    },
+  },
+  {
+    id: 2,
+    position: {
+      x: 1.5,
+      y: -1.12,
+      theta: 3.14,
+    },
+  },
+  {
+    id: 3,
+    position: {
+      x: 0.55,
+      y: 0,
+      theta: 3.14,
+    },
+  },
+  {
+    id: 4,
+    position: {
+      x: 2.5,
+      y: 0,
+      theta: 3.14,
+    },
+  },
+  {
+    id: 5,
+    position: {
+      x: 3.6,
+      y: 0,
+      theta: 3.14,
+    },
+  },
+];
+const blue = [
+  {
+    id: 0,
+    position: {
+      x: -1.5,
+      y: 1.12,
+      theta: 3.14,
+    },
+  },
+  {
+    id: 1,
+    position: {
+      x: -1.5,
+      y: 0,
+      theta: 0,
+    },
+  },
+  {
+    id: 2,
+    position: {
+      x: -1.5,
+      y: -1.12,
+      theta: 0,
+    },
+  },
+  {
+    id: 3,
+    position: {
+      x: -0.55,
+      y: 0,
+      theta: 0,
+    },
+  },
+  {
+    id: 4,
+    position: {
+      x: -2.5,
+      y: 0,
+      theta: 0,
+    },
+  },
+  {
+    id: 5,
+    position: {
+      x: -3.6,
+      y: 0,
+      theta: 0,
+    },
+  },
+];
+
 FieldWithRobotAndBall.args = {
   field: { size: { width: 6, length: 9 } },
   robots: {
-    blue: [],
-    yellow: [],
+    blue: blue,
+    yellow: yellow,
   },
   ball: {
     position: {

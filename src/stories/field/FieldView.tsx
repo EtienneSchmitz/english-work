@@ -11,7 +11,6 @@ export interface Robots {
     y: number;
     theta: number;
   };
-  radius: number;
 }
 
 export enum Color {
@@ -64,18 +63,12 @@ export class FieldView extends React.Component<FieldViewProps, FieldViewState> {
         }}
       >
         <GeometryField field={this.props.field} />
-        <Robot
-          robot={{
-            id: 1,
-            position: {
-              x: 0,
-              y: 0,
-              theta: 0,
-            },
-            radius: 0,
-          }}
-          color="yellow"
-        ></Robot>
+        {this.props.robots.blue.map((item, index) => (
+          <Robot robot={item} color="blue" radius={0.9}/>
+        ))}
+        {this.props.robots.yellow.map((item, index) => (
+          <Robot robot={item} color="yellow" radius={0.9}/>
+        ))}
         {this.props.ball ? <Ball ball={this.props.ball} /> : null}
       </Canvas>
     );

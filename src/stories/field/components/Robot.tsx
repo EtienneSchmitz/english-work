@@ -9,8 +9,8 @@ export interface RobotProps {
       y: number;
       theta: number;
     };
-    radius: number;
   };
+  radius: number;
   color: string;
 }
 
