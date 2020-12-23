@@ -1,5 +1,4 @@
 import React from "react";
-import { useThree } from "react-three-fiber";
 
 export interface BallProps {
   ball: {
@@ -9,7 +8,6 @@ export interface BallProps {
     };
     radius: number;
   };
-  scale: number;
 }
 
 export const Ball: React.FC<BallProps> = (props: BallProps) => {
@@ -18,14 +16,14 @@ export const Ball: React.FC<BallProps> = (props: BallProps) => {
       <mesh
         name="ball"
         position={[
-          props.ball.position.x * props.scale,
-          props.ball.position.y * props.scale,
+          props.ball.position.x,
+          props.ball.position.y,
           0,
         ]}
       >
         <circleGeometry
           attach="geometry"
-          args={[props.ball.radius * props.scale * 2, 32]}
+          args={[props.ball.radius * 2, 32]}
         ></circleGeometry>
         <meshBasicMaterial
           color="#fca503"

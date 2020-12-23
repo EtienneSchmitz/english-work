@@ -7,14 +7,13 @@ export interface GeometryProps {
   };
   height: number;
   width: number;
-  scale : number;
 }
 
 export const GeometryField: React.FC<GeometryProps> = (
   props: GeometryProps
 ) => {
-  const width = (props.field.size.width * 100) / 2;
-  const length = (props.field.size.length * 100) / 2;
+  const width = props.field.size.width / 2;
+  const length = props.field.size.length / 2;
 
   const outerLine: Array<Vector3> = [
     new Vector3(-length, -width, 0),
@@ -31,13 +30,13 @@ export const GeometryField: React.FC<GeometryProps> = (
 
   const centerCircle = new Shape();
   centerCircle.moveTo(0, 0);
-  centerCircle.arc(0, 0, 50, 0, 2 * Math.PI, false);
+  centerCircle.arc(0, 0, 0.5, 0, 2 * Math.PI, false);
 
   const points = centerCircle.getPoints();
   const geometryPoints = new BufferGeometry().setFromPoints(points);
 
-  const penaltywidth = (2.0 * 100) / 2;
-  const penaltydepth = 1.0 * 100;
+  const penaltywidth = 2.0 / 2;
+  const penaltydepth = 1.0;
   const rightPenalty: Array<Vector3> = [
     new Vector3(length, penaltywidth, 0),
     new Vector3(length - penaltydepth, penaltywidth, 0),
@@ -53,8 +52,8 @@ export const GeometryField: React.FC<GeometryProps> = (
   ];
 
 
-  const goalwidth = (1.0 * 100) / 2;
-  const goaldepth = 0.2 * 100;
+  const goalwidth = 1.0 / 2;
+  const goaldepth = 0.2;
 
   const goalLeft: Array<Vector3> = [
     new Vector3(-length, goalwidth, 0),
