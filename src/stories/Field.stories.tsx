@@ -39,8 +39,8 @@ FieldWithRobotAndBall.args = {
   },
   ball: {
     position: {
-      x: -1,
-      y: 1,
+      x: 0,
+      y: 0,
     },
     radius: 0.0215,
   },

@@ -63,20 +63,20 @@ export class FieldView extends React.Component<FieldViewProps, FieldViewState> {
           zoom: 100,
         }}
       >
-        <GeometryField field={this.props.field} width={width} height={height} />
-        {this.props.ball ? <Ball ball={this.props.ball} /> : null}
+        <GeometryField field={this.props.field} />
         <Robot
           robot={{
             id: 1,
             position: {
-              x: 1,
-              y: 2,
+              x: 0,
+              y: 0,
               theta: 0,
             },
             radius: 0,
           }}
           color="yellow"
         ></Robot>
+        {this.props.ball ? <Ball ball={this.props.ball} /> : null}
       </Canvas>
     );
   }

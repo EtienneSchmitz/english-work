@@ -5,8 +5,6 @@ export interface GeometryProps {
   field: {
     size: { width: number; length: number };
   };
-  height: number;
-  width: number;
 }
 
 export const GeometryField: React.FC<GeometryProps> = (

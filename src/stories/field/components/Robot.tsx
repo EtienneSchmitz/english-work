@@ -19,7 +19,7 @@ export const Robot: React.FC<RobotProps> = (props: RobotProps) => {
   shape.absarc(
     0,
     0,
-    0.09, // TODO : Search this
+    0.09 * 1.25, // TODO : Search this
     -props.robot.position.theta + 0.75, // Search this
     -props.robot.position.theta - 0.75, // Search this
     false
