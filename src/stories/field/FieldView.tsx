@@ -64,10 +64,10 @@ export class FieldView extends React.Component<FieldViewProps, FieldViewState> {
       >
         <GeometryField field={this.props.field} />
         {this.props.robots.blue.map((item, index) => (
-          <Robot robot={item} color="blue" radius={0.9}/>
+          <Robot robot={item} color="blue" radius={0.09}/>
         ))}
         {this.props.robots.yellow.map((item, index) => (
-          <Robot robot={item} color="yellow" radius={0.9}/>
+          <Robot robot={item} color="yellow" radius={0.09}/>
         ))}
         {this.props.ball ? <Ball ball={this.props.ball} /> : null}
       </Canvas>

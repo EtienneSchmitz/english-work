@@ -23,7 +23,7 @@ export const Ball: React.FC<BallProps> = (props: BallProps) => {
       >
         <circleGeometry
           attach="geometry"
-          args={[props.ball.radius * 2, 32]}
+          args={[props.ball.radius * 2.2, 32]}
         ></circleGeometry>
         <meshBasicMaterial
           color="#fca503"
