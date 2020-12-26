@@ -87,7 +87,7 @@ const blue = [
     position: {
       x: -1.5,
       y: 1.12,
-      theta: 3.14,
+      theta: 0,
     },
   },
   {
