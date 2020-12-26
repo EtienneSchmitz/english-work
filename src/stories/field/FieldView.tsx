@@ -20,7 +20,17 @@ export enum Color {
 
 export interface FieldViewProps {
   field: {
-    size: { width: number; length: number };
+    width: number;
+    length: number;
+    center_radius: number; // X et Y necessaire ?
+    goal: {
+      width: number;
+      depth: number;
+    };
+    penalty: {
+      width: number;
+      depth: number;
+    };
   };
   robots: {
     blue: Array<Robots>;
@@ -37,6 +47,7 @@ export interface FieldViewProps {
     width: number;
     height: number;
   };
+  color: string;
 }
 
 export interface FieldViewState {
@@ -62,12 +73,12 @@ export class FieldView extends React.Component<FieldViewProps, FieldViewState> {
           zoom: 100,
         }}
       >
-        <GeometryField field={this.props.field} />
+        <GeometryField field={this.props.field} color={this.props.color} />
         {this.props.robots.blue.map((item, index) => (
-          <Robot robot={item} color="blue" radius={0.09}/>
+          <Robot robot={item} color="blue" radius={0.09} />
         ))}
         {this.props.robots.yellow.map((item, index) => (
-          <Robot robot={item} color="yellow" radius={0.09}/>
+          <Robot robot={item} color="yellow" radius={0.09} />
         ))}
         {this.props.ball ? <Ball ball={this.props.ball} /> : null}
       </Canvas>

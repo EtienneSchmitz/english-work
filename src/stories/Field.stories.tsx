@@ -20,13 +20,28 @@ const Template: Story<FieldViewProps> = (args) => {
 
 export const FieldWithoutRobot = Template.bind({});
 
+const field = {
+  width: 6,
+  length: 9,
+  center_radius: 0.5,
+  goal: {
+    width: 1.0,
+    depth: 0.2,
+  },
+  penalty: {
+    width: 2.0,
+    depth: 1.0,
+  },
+};
+
 FieldWithoutRobot.args = {
-  field: { size: { width: 6, length: 9 } },
+  field: field,
   robots: {
     blue: [],
     yellow: [],
   },
   container: canvasSize,
+  color: "#197dd4",
 };
 
 export const FieldWithRobotAndBall = Template.bind({});
@@ -133,7 +148,7 @@ const blue = [
 ];
 
 FieldWithRobotAndBall.args = {
-  field: { size: { width: 6, length: 9 } },
+  field: field,
   robots: {
     blue: blue,
     yellow: yellow,
@@ -146,4 +161,5 @@ FieldWithRobotAndBall.args = {
     radius: 0.0215,
   },
   container: canvasSize,
+  color: "#197dd4",
 };
